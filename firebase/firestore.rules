@@ -1,0 +1,114 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{document} {
+      allow create: if request.auth.uid == document;
+      allow read: if request.auth.uid == document;
+      allow write: if request.auth.uid == document;
+      allow delete: if request.auth.uid == document;
+    }
+
+    match /Project/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /Project/{parent}/dataCollection/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /{path=**}/dataCollection/{document} {
+      allow read: if true;
+    }
+
+
+    match /Project/{parent}/dataProcessing/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /{path=**}/dataProcessing/{document} {
+      allow read: if true;
+    }
+
+
+    match /Project/{parent}/preProcessing/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /{path=**}/preProcessing/{document} {
+      allow read: if true;
+    }
+
+
+    match /Project/{parent}/exploratoryDataAnalysis/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /{path=**}/exploratoryDataAnalysis/{document} {
+      allow read: if true;
+    }
+
+
+    match /Project/{parent}/dataTransformation/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /{path=**}/dataTransformation/{document} {
+      allow read: if true;
+    }
+
+
+    match /Project/{parent}/Modelling/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /{path=**}/Modelling/{document} {
+      allow read: if true;
+    }
+
+
+    match /Project/{parent}/model_evaluation/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /{path=**}/model_evaluation/{document} {
+      allow read: if true;
+    }
+
+
+    match /Project/{parent}/Interpretation_and_Insights/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /{path=**}/Interpretation_and_Insights/{document} {
+      allow read: if true;
+    }
+
+  }
+}

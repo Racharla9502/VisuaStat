@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "4341598921",
+    "project_id": "visua-stat-2jjo9n",
+    "storage_bucket": "visua-stat-2jjo9n.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:4341598921:android:1f775806b566c186f41b18",
+        "android_client_info": {
+          "package_name": "com.mycompany.visuastat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkzd2FEuDuOU2enTiCd88frFORc0dgwjI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
